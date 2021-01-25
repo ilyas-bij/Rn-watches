@@ -3,6 +3,7 @@ import { StyleSheet, Text, View,ScrollView } from 'react-native'
 import { StatusBar } from 'expo-status-bar';
 import Nav from '../Nav/Nave'
 import Item from '../Cards/Item'
+import FlatList from '../Cards/FalteList'
 import { LinearGradient } from 'expo-linear-gradient'
 export default function Home() {
 
@@ -13,34 +14,26 @@ export default function Home() {
         {/* header */}
 
      
-     <View style={{
-            backgroundColor: '#DDD',
-            height:100, 
-           
-             }}>
-
-<Nav/>
-
-        </View>
+   
         <ScrollView 
         style={{
-            backgroundColor: '#DDD',
+            backgroundColor: 'blue',
             height:"100%",
            
              }}>
          {/* Flat list */}
-       
-        <View style={{
-            backgroundColor: '#FFF',
-            paddingTop:10,
-            height:270, 
-           }}>
-
-                <Item/>
-              
-        </View>
+    
         
-     
+             <View style={styles.Viewitem}>
+
+                <FlatList/>
+              
+             </View>
+             <View style={styles.Viewitem}>
+
+                <FlatList/>
+
+                </View>
         </ScrollView>
   
 </View>
@@ -49,4 +42,12 @@ export default function Home() {
     )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    Viewitem:{
+
+        backgroundColor: '#FFF',
+        paddingTop:2,
+        marginTop:10,
+        height:255, 
+    }
+})
