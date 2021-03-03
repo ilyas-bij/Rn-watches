@@ -51,7 +51,7 @@ export default class App extends React.Component {
       return itemData.indexOf(textData) > -1;
       
     });
-    console.log(newData.length)
+    
     this.setState({
       //setting the filtered newData on datasource
       //After setting the data it will automatically re-render the view

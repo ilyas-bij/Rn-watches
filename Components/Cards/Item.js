@@ -1,16 +1,21 @@
 import React from 'react'
-import {Image, StyleSheet, Text, View,ScrollView} from 'react-native'
+import {Image, StyleSheet, Text, View,ScrollView,TouchableHighlight} from 'react-native'
 import Swiper from 'react-native-swiper'
 import { LinearGradient } from 'expo-linear-gradient'
+import { useNavigation } from '@react-navigation/native';
+
 const Item = () => {
+    const navigation = useNavigation();
     return(
       
-        <View > 
+        <View  > 
+           <TouchableHighlight onPress={() => navigation.navigate('Detail')}  underlayColor="white">
       <View>
-<View 
-
-                        // onPress={()=>navigation.navigate("Detail")}
+            <View 
+                            
+                         
                         style={styles.Item}
+                        
                     >
                         <Image
                             source={require('../../assets/Imges/Wat.jpg')}
@@ -20,8 +25,11 @@ const Item = () => {
                                 width:160,
                                 
                             }}
+                            
                         />
-                         <Text numberOfLines={2} style={styles.ItemTitel}>
+                         <Text numberOfLines={2} style={styles.ItemTitel} 
+                         
+                         >
                          watche titel dvzdsvsdvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv</Text>
 
                         <View style={{
@@ -57,7 +65,7 @@ const Item = () => {
                     />
 
      </View>
-   
+     </TouchableHighlight>
   
      </View>
      

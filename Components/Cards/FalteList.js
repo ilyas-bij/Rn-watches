@@ -1,16 +1,38 @@
 import React from 'react'
-import {Image, StyleSheet, Text, View,FlatList} from 'react-native'
+import {Image, StyleSheet, SafeAreaView,Text, View,FlatList } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import Item from '../Cards/Item'
 
-export default function FalteList() {
+
+
+export default function FalteList({cat}) {
+
+    const DATA = [
+        {
+          id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+          title: 'First Item',
+        },
+        {
+          id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+          title: 'Second Item',
+        },
+        {
+          id: '58694a0f-3da1-471f-bd96-145571e29d72',
+          title: 'Third Item',
+        },
+      ];
+
+      const renderItem = ({ item }) => (
+        <Item />
+      );
+    
     return (
        <View>
                  <View>
                 {/*flat head*/}
                         <View style={styles.head}>
                    <View style={{width:"50%"}}>
-                        <Text style={styles.left}>Recommended</Text>
+                        <Text style={styles.left}>{cat}</Text>
                    </View>
                    <View style={{width:"50%", alignItems:"flex-end"}}>
                         <View style={styles.rigth}>
@@ -32,8 +54,23 @@ export default function FalteList() {
                             top:0
                         }}
                     />
-                <Item/>
+                
+                
               
+                
+                <SafeAreaView >
+                <FlatList
+                horizontal={true}
+                    data={DATA}
+                    renderItem={renderItem}
+                    keyExtractor={item => item.id}
+                />
+                </SafeAreaView>
+               
+           
+              
+
+               
              
             </View>
         
@@ -51,7 +88,7 @@ const styles = StyleSheet.create({
         paddingHorizontal:20,
         width:"100%",
         
-        backgroundColor:"red",
+        
         
         paddingBottom:2,
     },

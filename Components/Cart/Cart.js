@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar,Image,Pressable } from 'react-native';
-
+import { Ionicons,AntDesign } from '@expo/vector-icons';
 const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -8,7 +8,7 @@ const DATA = [
   },
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
+    title: 'FirstItemItemItemItemItemItemItemItemItemItemItemItemItemItemItemItemItemItem',
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
@@ -48,21 +48,26 @@ const Item = ({ item }) => (
   </View>
   <View style={styles.info}>
   <Text style={styles.title} numberOfLines={2}>{item.title}</Text>
-  <View  > 
+  <View style={{marginTop:4}} > 
        <View style={styles.row2}>
            <Text style={styles.Totaltitel} >brand</Text>
-           <Text  >200$</Text>
+           <Text  style={styles.Totalprix}>200$</Text>
            </View>
       </View>
       <View style={styles.row2}>
-           <Text style={styles.Totaltitel}  >contor</Text>
-           <Text >X</Text>
+           <View style={styles.Totaltitel}  >
+              
+           </View>
+
+           <Text  style={styles.Totalprix}>
+           <Ionicons name="trash" size={19} color="red" />
+           </Text>
            </View>
       </View>
     
   </View>
 );
-const Cart = () => {
+const Cart = ({navigation}) => {
   const renderItem = ({ item }) => (
  
    <Item item={item} />
@@ -70,7 +75,7 @@ const Cart = () => {
   return (
     <SafeAreaView style={styles.container}>
      
-      <View style={{paddingBottom:100}}>
+      <View style={{paddingBottom:92}}>
       <FlatList
         data={DATA}
         renderItem={renderItem}
@@ -81,7 +86,7 @@ const Cart = () => {
         <View style={styles.footer}>
         <View style={styles.Total}>
            
-        <Text style={styles.Totaltitel}>Total prix</Text>
+        <Text style={{width:'50%',paddingLeft:20}}>Total prix</Text>
         <Text  style={styles.Totalprix}>200$</Text>
         </View>
         
@@ -114,25 +119,28 @@ const styles = StyleSheet.create({
     padding: 20,
     marginVertical: 4,
     flex: 1,
-             
+        margin:9,
      flexDirection: "row",
-     height:110
-     
+     height:107,
+     borderRadius: 12,
   },
   title: {
     fontSize:17,
-    width:240
+    width:"72%"
   },
   imgcon:{
-    width:'25%'
+    width:'25%',
+    alignItems:"flex-start",
     
   },
   img:{
-    marginTop:-17,
+    marginTop:-12,
     marginLeft:-15,
     
+    
+    borderRadius: 12,
       width:80,
-      height:100
+      height:90
 
   },
   info:{
@@ -142,27 +150,31 @@ const styles = StyleSheet.create({
   footer:{
     position: 'absolute',
      left: 0, right: 0, bottom: 0,
-     height:100,
-     backgroundColor:"#DDD"
+     height:90,
+     backgroundColor:"#FFF",
+     borderTopLeftRadius: 20,
+     borderTopRightRadius: 20,
   },
   row2:{
     
-    marginVertical: 4,
+    marginVertical: 2,
      flexDirection: "row",
   },
   Total:{
     
     
     padding: 10,
-    marginVertical: 4,
+    
      flexDirection: "row",
      
   },
   Totaltitel:{
-    width:'50%'
+    width:'30%',
+    
   },
   Totalprix:{
-      width:'50%',
+    
+      width:"50%",
       textAlign:'right',
       paddingRight:20
   },
@@ -170,7 +182,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 10,
     width: '95%',
-    backgroundColor:'#FFF',
+    backgroundColor:'#000',
     opacity: 0.3,
     borderRadius:20,
     marginLeft:'2.5%'

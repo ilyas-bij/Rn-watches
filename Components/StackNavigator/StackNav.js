@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import Home from "../HomePage/Home";
 import Welcome from "../Welcome/Welcom";
+import Detail from "../Detail/Detail"
 
 import DrawerNav from "../DrawerNavigator/DrawerNav"
 import { enableScreens } from 'react-native-screens';
@@ -18,7 +19,8 @@ export default function StackNav() {
         }}
         >
           <Stack.Screen name="Welcome" component={Welcome} />
-          <Stack.Screen name="Home" component={DrawerNav} />
+          <Stack.Screen name="Home" component={DrawerNav}   />
+          <Stack.Screen name="Detail" component={Detail} />
           
           
 

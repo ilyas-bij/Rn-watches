@@ -27,8 +27,10 @@
     "react-native-screens": "^2.16.1",
     "react-native-search-filter": "^0.1.5",
     "react-native-swiper": "^1.6.0",
+    "react-native-uuid": "^1.4.9",
     "react-native-vector-icons": "^7.1.0",
-    "react-native-web": "~0.13.12"
+    "react-native-web": "~0.13.12",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
