@@ -68,7 +68,7 @@ export default class App extends React.Component {
         style={{
           height: 0.3,
           width: '90%',
-          backgroundColor: '#000',
+          backgroundColor: '#FFF',
         }}
       />
     );

@@ -26,7 +26,7 @@ export default function Nave() {
         <Body>
        
 <Item style={{
-                   backgroundColor:"#DDD",
+                   backgroundColor:"#fff",
                    paddingVertical:9,
                    paddingHorizontal:20,
                    marginHorizontal:-7,

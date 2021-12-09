@@ -21,7 +21,10 @@ export default function Home({route}) {
     const cat =["GUESS","Lacoste","Fossil","Swatch","Lacoste"];
 
     const show = cat.map((cat) =>
-   <ShowByCat  cat={cat}/>
+    <View key={cat.id} >
+         <ShowByCat cat={cat}/>
+    </View>
+  
   );
     
     return (
@@ -49,8 +52,7 @@ export default function Home({route}) {
 
 const styles = StyleSheet.create({
     Viewitem:{
-
-        backgroundColor: '#FFF',
+        backgroundColor: 'transparent',
         paddingTop:2,
         marginTop:10,
         height:255, 

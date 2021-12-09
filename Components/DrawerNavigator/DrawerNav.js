@@ -69,7 +69,7 @@ export default function DrawerNav() {
 
         <Drawer.Screen name="Detail" component={Detail}  />
         <Drawer.Screen name="searsh" component={Sershe} options={{ title: 'searsh'  
-        ,headerShown:true , 
+        ,headerShown:false , 
         headerLeft:() => (<Carticon/>),}} />
         <Drawer.Screen name="Cart" component={Cart}    options={{ title: 'Cart'  
         ,headerShown:true , 
