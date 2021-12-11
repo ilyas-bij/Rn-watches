@@ -11,58 +11,17 @@ const Item = () => {
         <View  > 
            <TouchableHighlight onPress={() => navigation.navigate('Detail')}  underlayColor="white">
       <View>
-            <View 
+            <View style={styles.Item}>
+                        <Image source={require('../../assets/Imges/Wat.jpg')} style={styles.image}/>
                             
-                         
-                        style={styles.Item}
-                        
-                    >
-                        <Image
-                            source={require('../../assets/Imges/Wat.jpg')}
-                            style={{
-                                height:135,
-                                borderRadius:15,
-                                width:160,
-                                
-                            }}
-                            
-                        />
-                         <Text numberOfLines={2} style={styles.ItemTitel} 
-                         
-                         >
-                         watche titel dvzdsvsdvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv</Text>
-
-                        <View style={{
-                            flexDirection:"row",
-                            paddingTop:10,
-                            
-                        }}>
-                           
-                            
-                      
-                      
-                        <Text style={styles.Textbrand}>
-                            Trust
-                        </Text>
-                        <Text style={styles.Textprix}>
-                            40,00$
-                        </Text>
+                         <Text numberOfLines={2} style={styles.ItemTitel} >titels</Text>
+                        <View style={{flexDirection:"row",paddingTop:10,}}>
+                            <Text style={styles.Textbrand}>Trust</Text>
+                            <Text style={styles.Textprix}>40,00$</Text>
                         </View>
                       
              </View>
-             
-         
-        <LinearGradient
-                        colors={["black", "transparent"]}
-                        style={{
-                            position:"absolute",
-                            left:1,
-                            right:0,
-                            height:1,
-                            marginTop:-3,
-                            top:5
-                        }}
-                    />
+              <LinearGradient colors={["black", "transparent"]} style={styles.Linea}/>
 
      </View>
      </TouchableHighlight>
@@ -116,4 +75,20 @@ const styles = StyleSheet.create({
         bottom: -12,
         width:"50%",
     },
+
+    image:{
+        height:135,
+        borderRadius:15,
+        width:160,
+        
+    },
+
+    Linea:{
+        position:"absolute",
+        left:1,
+        right:0,
+        height:1,
+        marginTop:-3,
+        top:5
+    }
   });
