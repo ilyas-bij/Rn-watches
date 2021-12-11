@@ -10,6 +10,7 @@
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/drawer": "^5.11.5",
+    "@react-navigation/material-bottom-tabs": "^6.0.9",
     "@react-navigation/native": "^5.8.10",
     "@react-navigation/stack": "^5.12.8",
     "expo": "~40.0.0",
@@ -22,13 +23,14 @@
     "react-native-element": "^1.2.1",
     "react-native-elements": "^3.0.1",
     "react-native-gesture-handler": "^1.9.0",
+    "react-native-paper": "^4.11.0",
     "react-native-reanimated": "^1.13.2",
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^2.16.1",
     "react-native-search-filter": "^0.1.5",
     "react-native-swiper": "^1.6.0",
     "react-native-uuid": "^1.4.9",
-    "react-native-vector-icons": "^7.1.0",
+    "react-native-vector-icons": "^9.0.0",
     "react-native-web": "~0.13.12",
     "uuid": "^8.3.2"
   },

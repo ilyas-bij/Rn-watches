@@ -5,49 +5,43 @@ import { StatusBar } from 'expo-status-bar';
 import FlatList from '../Cards/FalteList'
 import { LinearGradient } from 'expo-linear-gradient'
  function ShowByCat({cat}) {
-    
     return (
-        
-    
-   <View style={styles.Viewitem}>
-
-    <FlatList  cat={cat}/>
-  
-    </View>)
+     <View style={styles.Viewitem}>
+             <FlatList  cat={cat}/>
+     </View>)
 };
 
 
 export default function Home({route}) {
     const cat =["GUESS","Lacoste","Fossil","Swatch","Lacoste"];
 
-    const show = cat.map((cat) =>
-    <View key={cat.id} >
-         <ShowByCat cat={cat}/>
-    </View>
-  
-  );
     
     return (
-      
-<View >
-    <StatusBar style="dark" translucent = {true} />
+        
+          
+                <View >
+                    <StatusBar style="dark" translucent = {true} />
 
-        <ScrollView 
-        style={{
+                        <ScrollView style={{height:"100%"}}>
+                        <View style={styles.header}>
+                            <Text>Whatches App</Text>
+                        </View>
+                        <View style={styles.body}>
+                        {
+                            cat.map((i)=>{
+                                return(
+                                    <View key={i.id} >
+                                    <ShowByCat cat={i}/>
+                                    </View>
+                                )}
+                            )
+                        }
+                          </View>
+                        </ScrollView>
+
+                </View>
             
-            height:"100%",
-           
-             }}>
-         {/* Flat list */}
-       
-             {show}
-
-        </ScrollView>
-  
-</View>
-
-
-    )
+         )
 }
 
 const styles = StyleSheet.create({
@@ -56,5 +50,12 @@ const styles = StyleSheet.create({
         paddingTop:2,
         marginTop:10,
         height:255, 
+    },
+    header:{
+        height:70,
+        backgroundColor:'#FFF'
+    },
+    body:{
+        paddingBottom:60
     }
 })

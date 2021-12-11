@@ -7,6 +7,7 @@ import Item from '../Cards/Item'
 
 export default function FalteList({cat}) {
 
+    
     const DATA = [
         {
           id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -60,6 +61,7 @@ export default function FalteList({cat}) {
                 
                 <SafeAreaView >
                 <FlatList
+                
                 horizontal={true}
                     data={DATA}
                     renderItem={renderItem}

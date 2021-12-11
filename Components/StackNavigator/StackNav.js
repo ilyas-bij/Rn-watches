@@ -1,10 +1,13 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import Home from "../HomePage/Home";
+//screens
 import Welcome from "../Welcome/Welcom";
 import Detail from "../Detail/Detail"
-
-import DrawerNav from "../DrawerNavigator/DrawerNav"
+import Sershe from "../Sershe/SershePage"
+import Cart from '../Cart/Cart'
+import All from '../AllCart/All'
+//tabs
+import Btabs from '../BTab/Tabs'
 import { enableScreens } from 'react-native-screens';
 import { createStackNavigator  } from '@react-navigation/stack';
 
@@ -13,18 +16,14 @@ enableScreens();
 const Stack = createStackNavigator ();
 export default function StackNav() {
     return (
-        <Stack.Navigator
-        screenOptions={{
-          headerShown: false
-        }}
-        >
-          <Stack.Screen name="Welcome" component={Welcome} />
-          <Stack.Screen name="Home" component={DrawerNav}   />
-          <Stack.Screen name="Detail" component={Detail} />
-          
-          
-
-          </Stack.Navigator>
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+              <Stack.Screen name="Welcome" component={Welcome} />
+              <Stack.Screen name="Home" component={Btabs}  />
+              <Stack.Screen name="Detail" component={Detail} />
+              <Stack.Screen name="Cart" component={Cart} />
+              <Stack.Screen name="All" component={All} />
+              <Stack.Screen name="Sershe" component={Sershe} />
+        </Stack.Navigator>
     )
 }
 

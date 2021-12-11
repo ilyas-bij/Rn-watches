@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import AppContext from './Context/AppCon'
 import { NavigationContainer } from '@react-navigation/native';
 import Stack from "./Components/StackNavigator/StackNav"
 
@@ -10,10 +10,12 @@ import Stack from "./Components/StackNavigator/StackNav"
 
 export default function App() {
   return (
+  <AppContext>
+      <NavigationContainer >
+          <Stack/>
+       </NavigationContainer>
+  </AppContext>
   
-    <NavigationContainer >
-       <Stack/>
-    </NavigationContainer>
    
   );
 }
