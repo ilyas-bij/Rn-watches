@@ -2,10 +2,10 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 //screens
 import Welcome from "../Welcome/Welcom";
-import Detail from "../Detail/Detail"
-import Sershe from "../Sershe/SershePage"
-import Cart from '../Cart/Cart'
-import All from '../AllCart/All'
+import Detail from "../Screens/Detail/Detail"
+import Sershe from "../Screens/Sershe/SershePage"
+import Cart from '../Screens/Cart/Cart'
+import All from '../Screens/AllCart/All'
 //tabs
 import Btabs from '../BTab/Tabs'
 import { enableScreens } from 'react-native-screens';
