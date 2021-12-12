@@ -3,10 +3,10 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet } from 'react-native'
 import React from 'react';
-import Home from "../HomePage/Home";
-import Sershe from "../Sershe/SershePage"
-import Cart from '../Cart/Cart'
-import All from '../AllCart/All'
+import Home from "../Screens/HomePage/Home";
+import Sershe from "../Screens/Sershe/SershePage"
+import Cart from '../Screens/Cart/Cart'
+import All from '../Screens/AllCart/All'
 import { AntDesign ,Feather   } from '@expo/vector-icons';
 const Tab = createMaterialBottomTabNavigator();
 

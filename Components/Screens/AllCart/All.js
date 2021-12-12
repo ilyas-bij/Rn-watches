@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar,Image,Pressable } from 'react-native';
 import { BorderlessButton } from 'react-native-gesture-handler';
-import Catigo from '../Cards/Item2'
+import Catigo from '../../Cards/Item2'
 const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',

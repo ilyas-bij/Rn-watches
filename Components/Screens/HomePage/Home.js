@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View,ScrollView } from 'react-native'
 import { StatusBar } from 'expo-status-bar';
 
-import FlatList from '../Cards/FalteList'
+import FlatList from '../../Cards/FalteList'
 import { LinearGradient } from 'expo-linear-gradient'
  function ShowByCat({cat}) {
     return (
