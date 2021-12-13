@@ -44,7 +44,7 @@ const DATA = [
 const Item = ({ item }) => (
   <View style={styles.item}>
   <View style={styles.imgcon }>
-  <Image source={require('../../assets/Imges/Wat.jpg')}   style={styles.img }/>
+  <Image source={require('../../../assets/Imges/Wat.jpg')}   style={styles.img }/>
   </View>
   <View style={styles.info}>
   <Text style={styles.title} numberOfLines={2}>{item.title}</Text>
