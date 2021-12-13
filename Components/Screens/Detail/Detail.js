@@ -10,7 +10,7 @@ const Imges =()=>{
     
   <Image
   style={styles.imge}
-  source={require('../../assets/Imges/wat2.jpg')}
+  source={require('../../../assets/Imges/wat2.jpg')}
 />
           
 </View>
