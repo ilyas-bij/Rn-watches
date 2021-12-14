@@ -13,7 +13,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 
 
 export default function Home({route}) {
-    const cat =["GUESS","Lacoste","Fossil","Swatch","Lacoste"];
+    const cat =["GUESS","Lacoste","Fossil","Swatch"];
 
     
     return (
@@ -24,13 +24,13 @@ export default function Home({route}) {
 
                         <ScrollView style={{height:"100%"}}>
                         <View style={styles.header}>
-                            <Text>Whatches App</Text>
+                            <Text style={styles.Titel}>Whatches App</Text>
                         </View>
                         <View style={styles.body}>
                         {
                             cat.map((i)=>{
                                 return(
-                                    <View key={i.id} >
+                                    <View key={i} >
                                     <ShowByCat cat={i}/>
                                     </View>
                                 )}
@@ -57,5 +57,11 @@ const styles = StyleSheet.create({
     },
     body:{
         paddingBottom:60
+    },
+    Titel:{
+        fontSize:18,
+        marginTop:'10%',
+        marginLeft:'5%',
+        fontWeight:'700'
     }
 })
