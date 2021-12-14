@@ -7,6 +7,7 @@ import Home from "../Screens/HomePage/Home";
 import Sershe from "../Screens/Sershe/SershePage"
 import Cart from '../Screens/Cart/Cart'
 import All from '../Screens/AllCart/All'
+import Likes from '../Screens/Likes/Likes'
 import { AntDesign ,Feather   } from '@expo/vector-icons';
 const Tab = createMaterialBottomTabNavigator();
 
@@ -40,8 +41,9 @@ export default  function Tabs({route}) {
             }
         },})}>
       <Tab.Screen name="home" component={Home}   options={{tabBarLabel: false}} />
+      <Tab.Screen name="Likes" component={Likes}   options={{tabBarLabel: false}}/>
       <Tab.Screen name="Search" component={Sershe} options={{tabBarLabel: false}}/>
-      <Tab.Screen name="Likes" component={All}   options={{tabBarLabel: false}}/>
+      
       <Tab.Screen name="Profel" component={Cart} options={{tabBarLabel: false}}/>
       
      
