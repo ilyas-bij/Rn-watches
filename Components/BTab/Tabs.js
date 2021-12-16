@@ -8,7 +8,7 @@ import Sershe from "../Screens/Sershe/SershePage"
 import Cart from '../Screens/Cart/Cart'
 import All from '../Screens/AllCart/All'
 import Likes from '../Screens/Likes/Likes'
-import { AntDesign ,Feather   } from '@expo/vector-icons';
+import { AntDesign ,Feather ,EvilIcons    } from '@expo/vector-icons';
 const Tab = createMaterialBottomTabNavigator();
 
 export default  function Tabs({route}) {
@@ -34,17 +34,20 @@ export default  function Tabs({route}) {
             }else if (route.name === 'Likes') {
               return <AntDesign name="hearto"     style={styles.icon} color={color}/> ; 
             } else if (route.name === 'Profel') {
-              return     <Feather name="user"  style={styles.icon} color={color}/> ; 
+              return     <Feather name="user"  style={styles.icon} color={color}/>
+              
             }
-            else if (route.name === 'Search') {
-              return     <AntDesign name="search1"  style={styles.icon} color={color}/> ; 
+            else if (route.name === 'Cart') {
+              return    <EvilIcons name="cart"   size={30}  color={color} />
             }
         },})}>
       <Tab.Screen name="home" component={Home}   options={{tabBarLabel: false}} />
       <Tab.Screen name="Likes" component={Likes}   options={{tabBarLabel: false}}/>
-      <Tab.Screen name="Search" component={Sershe} options={{tabBarLabel: false}}/>
       
-      <Tab.Screen name="Profel" component={Cart} options={{tabBarLabel: false}}/>
+      <Tab.Screen name="Cart" component={Cart} options={{tabBarLabel: false}}/>
+      <Tab.Screen name="Profel" component={ Sershe} options={{tabBarLabel: false}}/>
+      
+      
       
      
     </Tab.Navigator>

@@ -32,11 +32,15 @@ const DATA = [
   },
   {
     id: '58694addd0xxf-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
+    title: 'Third 9bl',
   },
   {
     id: '58694a0f-xx-471f-bd96-145571e29d72',
-    title: 'Third Item',
+    title: 'Third last',
+  },
+  {
+    id: '58694a0f-xx-471f-bdss96-145571e29d72',
+    title: 'Third last',
   },
 ];
 
@@ -74,8 +78,11 @@ const Cart = ({navigation}) => {
   );
   return (
     <SafeAreaView style={styles.container}>
+          <View style={styles.header}/>
+                
+            
      
-      <View style={{paddingBottom:92}}>
+      <View style={{paddingBottom:92,backgroundColor:'#FFF',marginBottom:73}}>
       <FlatList
         data={DATA}
         renderItem={renderItem}
@@ -97,7 +104,7 @@ const Cart = ({navigation}) => {
         style={styles.button}
         onPress={() => navigation.navigate('Home')}
       >
-        <Text style={styles.text}>get started</Text>
+        <Text style={styles.text}>Buy Now </Text>
       </Pressable>
      
       
@@ -110,12 +117,16 @@ const Cart = ({navigation}) => {
 }
 
 const styles = StyleSheet.create({
+  header:{
+    height:25,
+    backgroundColor:'#FFF'
+},
   container: {
     flex: 1,
     
   },
   item: {
-    backgroundColor: '#f9c2ff',
+    backgroundColor: '#ddd',
     padding: 20,
     marginVertical: 4,
     flex: 1,
@@ -154,6 +165,8 @@ const styles = StyleSheet.create({
      backgroundColor:"#FFF",
      borderTopLeftRadius: 20,
      borderTopRightRadius: 20,
+     marginBottom:50
+    
   },
   row2:{
     
@@ -188,7 +201,7 @@ const styles = StyleSheet.create({
     marginLeft:'2.5%'
   },
   button: {
-    height: 45,
+    height: 40,
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
