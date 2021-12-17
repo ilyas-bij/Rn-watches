@@ -21,7 +21,7 @@ export default function Home({route}) {
           
                 <View >
                     <StatusBar style="dark" translucent = {true} />
-
+                    <View style={styles.headerone}/>
                         <ScrollView style={{height:"100%"}}>
                         <View style={styles.header}>
                             <Text style={styles.Titel}>Whatches App</Text>
@@ -52,7 +52,11 @@ const styles = StyleSheet.create({
         height:255, 
     },
     header:{
-        height:70,
+        height:45,
+        backgroundColor:'#FFF'
+    },
+    headerone:{
+        height:25,
         backgroundColor:'#FFF'
     },
     body:{
@@ -60,7 +64,7 @@ const styles = StyleSheet.create({
     },
     Titel:{
         fontSize:18,
-        marginTop:'10%',
+        marginTop:'3%',
         marginLeft:'5%',
         fontWeight:'700'
     }
