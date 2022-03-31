@@ -1,23 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Image, StyleSheet, Text, View,ScrollView,TouchableHighlight} from 'react-native'
-import Swiper from 'react-native-swiper'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native';
 
-const Item = () => {
+const Item = ({Item}) => {
     const navigation = useNavigation();
+
+    useEffect(() => {
+        //require('../../assets/Imges/Wat.jpg')}
+        //console.log(Item.titel);
+    }, []);
     return(
       
         <View  > 
-           <TouchableHighlight onPress={() => navigation.navigate('Detail')}  underlayColor="white">
+           <TouchableHighlight onPress={() => navigation.navigate('Detail',{Item:Item})}  underlayColor="white">
       <View>
             <View style={styles.Item}>
-                        <Image source={require('../../assets/Imges/Wat.jpg')} style={styles.image}/>
+                        <Image source={ {uri: Item.img}} style={styles.image}/>
                             
-                         <Text numberOfLines={2} style={styles.ItemTitel} >titels</Text>
+                         <Text numberOfLines={2} style={styles.ItemTitel} >{Item.titel}</Text>
                         <View style={{flexDirection:"row",paddingTop:10,}}>
                             <Text style={styles.Textbrand}>Trust</Text>
-                            <Text style={styles.Textprix}>40,00$</Text>
+                            <Text style={styles.Textprix}>{Item.prix},99$</Text>
                         </View>
                       
              </View>
@@ -35,7 +39,7 @@ export default Item;
 
 const styles = StyleSheet.create({
     Item:{
-        height:205,
+        height:212,
         elevation:2,
         backgroundColor:"#FFF",
         marginLeft:20,
@@ -77,10 +81,13 @@ const styles = StyleSheet.create({
     },
 
     image:{
-        height:135,
+        height:145,
         borderRadius:15,
-        width:160,
-        
+        width:130,
+        marginLeft:12,
+        justifyContent: 'center',
+        alignItems: 'center',
+
     },
 
     Linea:{

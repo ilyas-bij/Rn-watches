@@ -10,38 +10,7 @@ const DATA = [
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
     title: 'FirstItemItemItemItemItemItemItemItemItemItemItemItemItemItemItemItemItemItem',
   },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third 1',
-  },
-  {
-    id: '5869dzs4a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third 2',
-  },
-  {
-    id: '58694addd0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third 3',
-  },
-  {
-    id: '58694a0f-3xxddzdza1-471f-bd96-145571e29d72',
-    title: 'Third Item',
-  },
-  {
-    id: '5869dzs4a0xxf-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
-  },
-  {
-    id: '58694addd0xxf-3da1-471f-bd96-145571e29d72',
-    title: 'Third 9bl',
-  },
-  {
-    id: '58694a0f-xx-471f-bd96-145571e29d72',
-    title: 'Third last',
-  },
-  {
-    id: '58694a0f-xx-471f-bdss96-145571e29d72',
-    title: 'Third ',
-  },
+
 ];
 
 
@@ -65,7 +34,7 @@ const Item = ({ item }) => (
 
            <TouchableHighlight  style={styles.Totallike} >
            
-           <AntDesign name="heart" size={19} color="#e54747"  onPress={()=>{console.log(item.title)}} />
+           <AntDesign name="heart" size={19} color="#b11414"  onPress={()=>{console.log(item.title)}} />
            </TouchableHighlight>
            </View>
       </View>
@@ -83,7 +52,7 @@ const Likes = ({navigation}) => {
                 
             
      
-      <View style={{paddingBottom:75,backgroundColor:'#FFF'}}>
+      <View style={{backgroundColor:'#FFF',height:'100%'}}>
       <FlatList
         data={DATA}
         renderItem={renderItem}
@@ -109,7 +78,7 @@ const styles = StyleSheet.create({
     
   },
   item: {
-    backgroundColor: '#ddd',
+    backgroundColor: '#f1F1F1',
     padding: 20,
     marginVertical: 4,
     flex: 1,

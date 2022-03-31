@@ -64,7 +64,7 @@ const Item = ({ item }) => (
            </View>
 
            <Text  style={styles.Totalprix}>
-           <Ionicons name="trash" size={19} color="red" />
+           <Ionicons name="trash" size={19} color="#b11414" />
            </Text>
            </View>
       </View>
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     
   },
   item: {
-    backgroundColor: '#ddd',
+    backgroundColor: '#F1F1F1',
     padding: 20,
     marginVertical: 4,
     flex: 1,
