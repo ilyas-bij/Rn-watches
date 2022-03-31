@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import { StyleSheet, Text, View ,ScrollView,Image,Pressable,Button} from 'react-native'
 import { Ionicons,AntDesign } from '@expo/vector-icons';
 
 
-const Imges =()=>{
+
+const Imges =({Img})=>{
   return (
-    <View>
+    <View style={{backgroundColor:'#FFF'}}>
       
     
   <Image
   style={styles.imge}
-  source={require('../../../assets/Imges/wat2.jpg')}
+  source={ {uri: Img}}
 />
           
 </View>
@@ -18,7 +19,14 @@ const Imges =()=>{
 
 }
 
-const Detail = ({navigation}) => {
+const Detail = ({navigation,route}) => {
+  const { Item } = route.params;
+  
+  const [item, setitem] = useState(Item);
+  useEffect(() => {
+    console.log(Item.titel);
+    
+}, [Item]);
   return (
     <View>
       <ScrollView>
@@ -26,7 +34,7 @@ const Detail = ({navigation}) => {
       
       <View style={styles.sweper}>
       
-        <Imges/>
+        <Imges Img={item.img}/>
         <View >
                     <View style={styles.head}>
                     <View style={{width:"50%",alignItems:"flex-start"}}>
@@ -42,7 +50,7 @@ const Detail = ({navigation}) => {
                         
                           onPress={() => alert("cart")} >
                                   <View style={styles.rigth}>
-                                  <AntDesign name="heart" size={19} color="black"  style={{marginLeft:2,opacity:0.5}}/>
+                                  <AntDesign name="heart" size={19} color="#b11414"  style={{marginLeft:2,opacity:0.5}}/>
                                   
                                   </View>
                         </Pressable>
@@ -52,22 +60,15 @@ const Detail = ({navigation}) => {
       </View>
       <View style={styles.dec}>
       <Text style={styles.Pprix}>
-         prix : $200 - 500 
+         prix : {item.prix},99 $
         </Text>
-        <Text style={styles.Ptitel}>
-        thes is tite thes is tite thes is tite
-        thes is tite
-        </Text>
+        <Text style={styles.Ptitel}> {Item.titel}</Text>
     
-        <Text style={styles.Ptitel}>
+        <Text style={styles.Pdecone}>
           description
         </Text>
         <Text style={styles.Pdec}>
-          hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
-          hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
-          hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
-          hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
-          hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+        {Item.des}
         </Text>
       </View>
       </ScrollView>
@@ -98,7 +99,14 @@ const styles = StyleSheet.create({
     marginHorizontal:10,
     marginVertical:5,
     fontWeight: '700',
-    fontSize:25
+    fontSize:25,
+    marginLeft:22
+  },
+  Pdecone:{
+    marginHorizontal:10,
+    marginVertical:5,
+    fontWeight: '700',
+    fontSize:25,
   },
 
   Pprix:{
@@ -110,9 +118,10 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   Pdec:{
-    textAlign:'center',
+    
     marginHorizontal:5,
     marginRight:9,
+    marginLeft:20,
     
     
     fontSize:18
@@ -121,7 +130,7 @@ const styles = StyleSheet.create({
     backgroundColor:"#FFF",
     
     
-    marginBottom:80
+    marginBottom:100
     },
 
   // all
@@ -139,9 +148,10 @@ const styles = StyleSheet.create({
 
   
   imge:{
-    width:'100%',
+    width:'80%',
     height:'100%',
     resizeMode:"cover",
+    marginLeft:'10%'
     
 
   },
@@ -150,7 +160,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 2,
     width: '95%',
-    backgroundColor:'#DDD',
+    backgroundColor:'#b11414',
     
     borderRadius:20,
     marginLeft:'2.5%'
@@ -166,7 +176,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '600',
     textTransform:'capitalize',
-    color:'black',
+    color:'#fff',
     
   },
 

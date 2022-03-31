@@ -17,7 +17,8 @@ export default  function Tabs({route}) {
     
     <Tab.Navigator
      initialRouteName="Home"
-     activeColor="#1818"
+     activeColor="#b11414"
+    
      inactiveColor="#262626"
      barStyle={styles.botomTab}
       screenOptions={({ route }) => ({

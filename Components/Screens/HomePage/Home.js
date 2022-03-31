@@ -1,26 +1,39 @@
-import React from 'react'
+import React,{useContext,useEffect,useState} from 'react'
 import { StyleSheet, Text, View,ScrollView } from 'react-native'
 import { StatusBar } from 'expo-status-bar';
-
 import FlatList from '../../Cards/FalteList'
 import { LinearGradient } from 'expo-linear-gradient'
- function ShowByCat({cat}) {
+
+import {ThemeContext} from '../../../Context/AppCon'
+
+
+ function ShowByCat({cat,Data}) {
     return (
      <View style={styles.Viewitem}>
-             <FlatList  cat={cat}/>
+             <FlatList  cat={cat} Data={Data} />
      </View>)
 };
 
 
 export default function Home({route}) {
-    const cat =["GUESS","Lacoste","Fossil","Swatch"];
+
+    const context = useContext(ThemeContext);
+    const [categor, setCat] = useState();
+   
+
+    useEffect(() => {
+        const cate = context.Data.map(i => i.cat)
+        
+        var catego = cate.filter((item,index) => cate.indexOf(item) === index);
+        setCat(catego)
+    }, [context.Data]);
 
     
     return (
         
           
                 <View >
-                    <StatusBar style="dark" translucent = {true} />
+                    <StatusBar style="auto" translucent = {true} />
                     <View style={styles.headerone}/>
                         <ScrollView style={{height:"100%"}}>
                         <View style={styles.header}>
@@ -28,10 +41,11 @@ export default function Home({route}) {
                         </View>
                         <View style={styles.body}>
                         {
-                            cat.map((i)=>{
+                           categor && categor.map((i,index)=>{
+                               var x = context.Data && context.Data.filter(j => j.cat === i ? j : null);
                                 return(
-                                    <View key={i} >
-                                    <ShowByCat cat={i}/>
+                                    <View key={index} >
+                                    <ShowByCat cat={i} Data={x}/>
                                     </View>
                                 )}
                             )
@@ -53,19 +67,21 @@ const styles = StyleSheet.create({
     },
     header:{
         height:45,
-        backgroundColor:'#FFF'
+        backgroundColor:'#b11414',
+        
     },
     headerone:{
         height:25,
-        backgroundColor:'#FFF'
+        backgroundColor:'#b11414'
     },
     body:{
-        paddingBottom:60
+        paddingBottom:85
     },
     Titel:{
         fontSize:18,
         marginTop:'3%',
         marginLeft:'5%',
-        fontWeight:'700'
+        fontWeight:'700',
+        color:'#fff'
     }
 })

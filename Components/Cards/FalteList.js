@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useEffect ,useContext, useState} from 'react'
 import {Image, StyleSheet, SafeAreaView,Text, View,FlatList } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import Item from '../Cards/Item'
+import {ThemeContext} from '../../Context/AppCon'
 
 
+export default function FalteList({cat,Data}) {
 
-export default function FalteList({cat}) {
-
+    const context = useContext(ThemeContext);
+    const [items, setitems] = useState();
+    
+    useEffect(() => {
+        //const Data = context.Data.map(i => i.cat===cat ? i : null)
+        
+    }, []);
     
     const DATA = [
         {
@@ -24,7 +31,8 @@ export default function FalteList({cat}) {
       ];
 
       const renderItem = ({ item }) => (
-        <Item />
+          
+        <Item Item={item} />
       );
     
     return (
@@ -59,16 +67,19 @@ export default function FalteList({cat}) {
                 
               
                 
-                <SafeAreaView >
+                <SafeAreaView  >
                 <FlatList
                 
                 horizontal={true}
-                    data={DATA}
+                    data={Data}
                     renderItem={renderItem}
                     keyExtractor={item => item.id}
+                    showsHorizontalScrollIndicator={false}
+
                 />
+                
                 </SafeAreaView>
-               
+                
            
               
 
@@ -84,23 +95,22 @@ export default function FalteList({cat}) {
 }
 
 const styles = StyleSheet.create({
+
     head:{
     
         flexDirection:"row",
         paddingHorizontal:20,
-        width:"100%",
-        
-        
-        
+        width:"100%",   
         paddingBottom:2,
     },
     left:{
         fontWeight:"bold",
         fontSize:18,
-        color:"black"
+        color:"black",
     },
     rigth:{
-        backgroundColor:"#DDD",
+        backgroundColor:"#b11414",
+        opacity:0.8,
         paddingHorizontal:20,
         paddingVertical:5,
         borderRadius:15
